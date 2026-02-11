@@ -47,4 +47,4 @@
 
 ## 出力ファイル
 
-`.docs/product/reviews/tests.md`
+`.claude/notes/reviews/tests.md`

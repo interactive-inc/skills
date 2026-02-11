@@ -44,4 +44,4 @@
 
 ## 出力ファイル
 
-`.docs/product/reviews/database-schema.md`
+`.claude/notes/reviews/database-schema.md`

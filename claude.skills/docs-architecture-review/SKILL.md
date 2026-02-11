@@ -1,7 +1,6 @@
 ---
-name: review-architecture
-description: リポジトリのアーキテクチャをレビューする。データベース、テスト、API、コンポーネント、セキュリティ、依存関係などを評価。
-updated-at: 2026-01-22
+name: docs-architecture-review
+description: Review and evaluate repository architecture covering database, tests, API design, components, security, and dependencies.
 ---
 
 # Review Architecture
@@ -14,7 +13,7 @@ updated-at: 2026-01-22
 
 - 検出: リポジトリ構成を確認
 - レビュー: 該当項目をサブエージェントで並列実行
-- 保存: `.docs/product/reviews/` に書き込み
+- 保存: `.docs/reviews/` に書き込み
 
 ## ワークフロー
 
@@ -59,7 +58,7 @@ ls package.json 2>/dev/null
 ```
 references/<item>.md のレビュー観点に従ってレビューを実行してください。
 
-結果は以下の形式で .docs/product/reviews/<item>.md に保存してください:
+結果は以下の形式で .docs/reviews/<item>.md に保存してください:
 
 ---
 updated-at: YYYY-MM-DD
@@ -89,12 +88,12 @@ updated-at: YYYY-MM-DD
 - api-design: ✓
 - ...
 
-詳細は .docs/product/reviews/ を参照してください。
+詳細は .docs/reviews/ を参照してください。
 ```
 
 ## 出力先
 
-`.docs/product/reviews/`
+`.docs/reviews/`
 
 ## レビュー対象外の場合
 

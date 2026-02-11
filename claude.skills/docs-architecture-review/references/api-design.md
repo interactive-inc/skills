@@ -46,4 +46,4 @@
 
 ## 出力ファイル
 
-`.docs/product/reviews/api-design.md`
+`.claude/notes/reviews/api-design.md`

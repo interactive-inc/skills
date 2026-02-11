@@ -47,4 +47,4 @@
 
 ## 出力ファイル
 
-`.docs/product/reviews/security.md`
+`.claude/notes/reviews/security.md`

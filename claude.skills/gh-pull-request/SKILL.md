@@ -1,6 +1,6 @@
 ---
-name: update-pr
-description: PRの説明文を確認・更新する。「PRを更新」「PRの内容を追記」などのリクエスト時に使用。
+name: gh-pull-request
+description: Review and update GitHub pull request description, labels, and details.
 ---
 
 # Update PR

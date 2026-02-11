@@ -1,6 +1,6 @@
 ---
-name: update-issue
-description: Issueの説明文を確認・更新する。「Issueを更新」「Issueの内容を追記」などのリクエスト時に使用。
+name: gh-issue
+description: Review and update GitHub issue description, labels, and details.
 ---
 
 # Update Issue
@@ -11,8 +11,8 @@ Issueの説明文を確認し、必要に応じて分析コメントを追記す
 
 | 引数 | 動作 |
 |------|------|
-| `/.update-issue 1234` | Issue #1234 を処理 |
-| `/.update-issue` | 8件取得してAskで確認後、一括処理 |
+| `/.gh-issue 1234` | Issue #1234 を処理 |
+| `/.gh-issue` | 8件取得してAskで確認後、一括処理 |
 
 ## ワークフロー
 

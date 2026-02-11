@@ -1,6 +1,6 @@
 ---
-name: build-hono-app
-description: TypeScript バックエンド開発スキル。Clean Architecture、レイヤー構成、Repository パターン、Use Case 実装、エラーハンドリングなど。API 開発時に使用。
+name: stack-hono-app
+description: TypeScript backend development with Hono framework. Clean Architecture, layered structure, Repository pattern, Use Case implementation, and error handling for API development.
 ---
 
 # TypeScript Backend Development

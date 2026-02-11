@@ -1,6 +1,6 @@
 ---
 name: test-react-components
-description: "app/components の単体テストを作成・実行・修正する。React Testing Library + happy-dom を使用。"
+description: "Create, run, and fix unit tests for React components using React Testing Library and happy-dom."
 args: "[--full]"
 disable-model-invocation: true
 ---

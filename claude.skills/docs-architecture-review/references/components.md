@@ -43,4 +43,4 @@
 
 ## 出力ファイル
 
-`.docs/product/reviews/components.md`
+`.claude/notes/reviews/components.md`

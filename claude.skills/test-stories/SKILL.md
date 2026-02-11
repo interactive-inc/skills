@@ -1,6 +1,6 @@
 ---
 name: test-stories
-description: ユーザーストーリーからE2Eテストを作成・更新するスキル。ストーリーに基づいてPlaywrightテストを生成する。
+description: Create and update E2E tests from user stories using Playwright. Generate test scenarios based on story acceptance criteria.
 args: "[--full]"
 disable-model-invocation: true
 ---

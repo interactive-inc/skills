@@ -1,6 +1,6 @@
 ---
 name: checkout
-description: GitHub Issueを選択してworktreeを作成し、自律的に開発を進めてPRを完成させる。
+description: Select a GitHub issue, create a git worktree, autonomously develop the solution, and submit a pull request.
 ---
 
 # 自律開発スキル
@@ -24,11 +24,11 @@ Issueを選択し、Claudeが司令塔となってサブエージェントとス
 
 | スキル | 用途 |
 |--------|------|
-| `/.update-issue` | Issue確認・更新 |
-| `/.update-pr` | PR確認・更新 |
+| `/.gh-issue` | Issue確認・更新 |
+| `/.gh-pull-request` | PR確認・更新 |
 
 ```
-Skill ツールで skill: "update-issue" を実行
+Skill ツールで skill: "gh-issue" を実行
 ```
 
 ### サブエージェントで実行 (Task ツール経由)
@@ -37,11 +37,11 @@ Skill ツールで skill: "update-issue" を実行
 
 | スキル | 用途 |
 |--------|------|
-| `/update-docs` | 仕様書の更新 |
+| `/docs-update` | 仕様書の更新 |
 | `/test-lib` | lib/utils の単体テスト |
 | `/test-react-components` | コンポーネントの単体テスト |
 | `/test-pages` | ページのE2Eテスト |
-| `/infer-code-rules` | コード規則・デザインガイドラインの抽出 |
+| `/claude-code-rules` | コード規則・デザインガイドラインの抽出 |
 
 ```
 Task ツールで subagent_type: "general-purpose" を使い、
@@ -67,7 +67,7 @@ Phase 2: 環境準備 (ブランチ + Draft PR)
     ↓
 Phase 3: 要件分析
     │
-    ├─→ Skill: update-issue (メイン) ─→ Issue内容を確認・不明点を解消
+    ├─→ Skill: gh-issue (メイン) ─→ Issue内容を確認・不明点を解消
     │
     ↓
 Phase 4: 実装計画 (プランモード)
@@ -86,14 +86,14 @@ Phase 6: 検証 (並列実行)
     ├─→ Task + Skill: test-lib
     ├─→ Task + Skill: test-react-components
     ├─→ Task + Skill: test-pages
-    ├─→ Task + Skill: infer-code-rules
+    ├─→ Task + Skill: claude-code-rules
     │
     ↓
 Phase 7: ドキュメント更新
-    ├─→ Task + Skill: update-docs
+    ├─→ Task + Skill: docs-update
     ↓
 Phase 7.5: PR更新
-    ├─→ Skill: update-pr (メイン)
+    ├─→ Skill: gh-pull-request (メイン)
     ↓
 Phase 8: 完了
     │
@@ -224,10 +224,10 @@ gh pr create --draft --title "#${ISSUE_NUM} <Issueタイトル>" --body "Closes 
 
 ## Phase 3: 要件分析
 
-Skill ツールで `update-issue` を実行してIssueの内容を確認・整理する。
+Skill ツールで `gh-issue` を実行してIssueの内容を確認・整理する。
 
 ```
-Skill ツール: skill: "update-issue"
+Skill ツール: skill: "gh-issue"
 ```
 
 人間への質問が発生する可能性があるため、サブエージェントではなくメインで実行する。
@@ -288,7 +288,7 @@ Task ツール (subagent_type: "general-purpose")
   prompt: "Skill ツールで skill: 'test-pages' を実行して" (必要に応じて)
 
 Task ツール (subagent_type: "general-purpose")
-  prompt: "Skill ツールで skill: 'infer-code-rules' を実行して"
+  prompt: "Skill ツールで skill: 'claude-code-rules' を実行して"
 ```
 
 並列実行後、結果をまとめて報告。
@@ -296,19 +296,19 @@ Task ツール (subagent_type: "general-purpose")
 
 ## Phase 7: ドキュメント更新
 
-Task ツールで `update-docs` を実行して仕様書を更新する。
+Task ツールで `docs-update` を実行して仕様書を更新する。
 
 ```
 Task ツール (subagent_type: "general-purpose")
-  prompt: "Skill ツールで skill: 'update-docs' を実行して"
+  prompt: "Skill ツールで skill: 'docs-update' を実行して"
 ```
 
 ## Phase 7.5: PR更新
 
-Skill ツールで `update-pr` を実行してPR説明を更新する。
+Skill ツールで `gh-pull-request` を実行してPR説明を更新する。
 
 ```
-Skill ツール: skill: "update-pr"
+Skill ツール: skill: "gh-pull-request"
 ```
 
 人間への質問が発生する可能性があるため、サブエージェントではなくメインで実行する。

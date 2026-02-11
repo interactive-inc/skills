@@ -1,6 +1,6 @@
 ---
 name: test-lib
-description: "ライブラリ・ユーティリティの単体テストを作成・実行・修正する。"
+description: "Create, run, and fix unit tests for libraries and utility modules."
 args: "[--full]"
 disable-model-invocation: true
 ---

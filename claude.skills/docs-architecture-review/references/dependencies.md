@@ -41,4 +41,4 @@
 
 ## 出力ファイル
 
-`.docs/product/reviews/dependencies.md`
+`.claude/notes/reviews/dependencies.md`
