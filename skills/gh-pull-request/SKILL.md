@@ -1,5 +1,5 @@
 ---
-name: .gh-pull-request
+name: gh-pull-request
 description: Create or update GitHub pull request with proper format and required information.
 ---
 

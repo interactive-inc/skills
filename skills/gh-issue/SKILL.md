@@ -1,5 +1,5 @@
 ---
-name: .gh-issue
+name: gh-issue
 description: GitHub Issue template and guidelines for creating issues
 ---
 
