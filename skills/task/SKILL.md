@@ -17,7 +17,7 @@ With argument: fetch the task by page ID and resume work. Keep Notion status in 
 
 Invoke via the Skill tool.
 
-- notion-tasks: Task properties, status transitions, and formatting rules.
+- notion-tasks-system: Task properties, status transitions, and formatting rules.
 - gh-issue-template: Issue template, labels, and formatting rules.
 - gh-pr-template: PR template, formatting, and required sections.
 - .agent-browser: Browser automation for verification.
