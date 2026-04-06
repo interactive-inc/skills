@@ -12,7 +12,7 @@ GitHub の操作はしない。
 
 - `gh issue view {number}` で Issue の内容を取得する
 - コードベースを読んで影響範囲を把握する
-- gh-issue-template スキルのテンプレートに従って計画テキストを作成する
+- `gh-issue-template` スキルのテンプレートに従って計画テキストを作成する
 - テキストを返す
 
 ## スキップ基準
@@ -28,5 +28,5 @@ GitHub の操作はしない。
 
 Invoke via the Skill tool.
 
-- gh-issue-template: テンプレートとラベルのルール
-- superpowers: Spawn parallel agents, create plans, review code.
+- `gh-issue-template`: テンプレートとラベルのルール
+- `superpowers`: Spawn parallel agents, create plans, review code.
