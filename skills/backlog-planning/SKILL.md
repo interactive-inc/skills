@@ -1,5 +1,5 @@
 ---
-name: plan-backlog
+name: backlog-planning
 description: "Create or update product backlog content."
 arguments: Issue description or backlogs/ slug.
 ---

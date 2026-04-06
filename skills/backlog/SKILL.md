@@ -20,9 +20,9 @@ See docs skill references/backlogs.md for format.
 
 Invoke via the Skill tool.
 
-- plan-backlog: Discuss and draft backlog content.
-- docs: `.docs/` format and rules.
-- issue: Investigate and plan GitHub Issues.
+- `backlog-planning`: Discuss and draft backlog content.
+- `docs`: `.docs/` format and rules.
+- `issue`: Investigate and plan GitHub Issues.
 
 ## Workflow
 
@@ -33,11 +33,11 @@ Invoke via the Skill tool.
   - Issue text: treat as a new issue
   - Existing backlogs/ slug: update the existing file
 - Discuss against index.md (see Discussion flow)
-- Use plan-backlog skill to draft content from the discussion result
+- Use `backlog-planning` skill to draft content from the discussion result
 - Create or update slug.md with the returned content
 - Regenerate `index.md`
 - Ask the user whether to proceed with Issue creation
-  - Proceed: invoke the issue skill
+  - Proceed: invoke the `issue` skill
   - Stop: end the workflow
 
 ## Discussion flow

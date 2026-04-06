@@ -1,5 +1,5 @@
 ---
-name: plan-issue
+name: issue-planning
 description: "Create technical plan text for a GitHub Issue."
 arguments: Issue 番号
 ---
