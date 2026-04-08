@@ -1,7 +1,11 @@
 ---
 name: docs
-description: Structure and rules for .docs/ directory. Manages product specs, decisions, backlogs, and feedbacks. Keeps docs in sync with code through periodic review.
+description: Product thinking and documentation. Manages product specs, customer understanding, decisions, backlogs, and feedbacks. Keeps docs in sync with code through periodic review.
 ---
+
+# 製品思想
+
+顧客はジョブを片付けるために製品を雇う（JTBD）。顧客の不安と期待を順番に解消する設計を最優先する。画面構成は不安解消の順序で決める。シナリオは操作手順ではなく思考と感情で書く。全画面で loading/error/empty/success 各状態のユーザ感情を考慮する。破壊的操作は確認、可逆操作は undo を提供。顧客理解とアートディレクションは index.md に記録する。
 
 # ドキュメントルール
 

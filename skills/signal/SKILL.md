@@ -1,10 +1,10 @@
 ---
-name: voc
+name: signal
 description: "Record customer voice to feedbacks/."
 arguments: Voice content. Metadata (who, source) is optional.
 ---
 
-# Voice
+# Signal
 
 Record customer voices to `.docs/feedbacks/` and attach issue analysis.
 
