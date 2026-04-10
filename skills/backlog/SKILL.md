@@ -59,10 +59,11 @@ Invoke via the Skill tool.
 - Discuss against index.md (see Discussion flow)
 - Use `backlog-planning` skill to draft content from the discussion result
 - Create or update slug.md with the returned content
-- Regenerate `index.md`
 - Ask the user whether to proceed with Issue creation
   - Proceed: invoke the `issue` skill
   - Stop: end the workflow
+
+Do not touch `index.md`. Regenerating `index.md` is handled by the separate `backlogs-index` skill.
 
 ## Discussion flow
 
