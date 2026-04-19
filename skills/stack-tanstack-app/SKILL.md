@@ -1,6 +1,8 @@
 ---
 name: stack-tanstack-app
 description: Build and enhance React applications using the TanStack ecosystem. Use this skill when working with TanStack libraries such as Router, Query, Form, or Table—whether starting a new project or integrating into existing code.
+metadata:
+  author: shigurenimo
 ---
 
 # SKILL.md

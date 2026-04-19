@@ -1,6 +1,8 @@
 ---
 name: stack-hono-app
 description: TypeScript backend development with Hono framework. Clean Architecture, layered structure, Repository pattern, Use Case implementation, and error handling for API development.
+metadata:
+  author: shigurenimo
 ---
 
 # TypeScript Backend Development

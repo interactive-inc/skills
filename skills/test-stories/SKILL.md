@@ -3,6 +3,8 @@ name: test-stories
 description: Create and update E2E tests from user stories using Playwright. Generate test scenarios based on story acceptance criteria.
 args: "[--full]"
 disable-model-invocation: true
+metadata:
+  author: shigurenimo
 ---
 
 # Test Stories
