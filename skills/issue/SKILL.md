@@ -3,6 +3,7 @@ name: issue
 description: "[number|description] Investigate and plan GitHub Issues."
 metadata:
   author: shigurenimo
+  dev: true
 ---
 
 ## Arguments

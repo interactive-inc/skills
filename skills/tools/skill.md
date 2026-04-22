@@ -1,6 +1,8 @@
 ---
 name: tools
 description: List all available tools in the current session
+metadata:
+  dev: true
 ---
 
 ツール定義（システムから渡される関数スキーマ）を参照し出力する。

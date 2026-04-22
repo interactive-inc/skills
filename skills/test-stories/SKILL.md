@@ -5,6 +5,7 @@ args: "[--full]"
 disable-model-invocation: true
 metadata:
   author: shigurenimo
+  dev: true
 ---
 
 # Test Stories

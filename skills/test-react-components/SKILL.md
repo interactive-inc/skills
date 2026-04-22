@@ -1,10 +1,11 @@
 ---
 name: test-react-components
-description: "Create, run, and fix unit tests for React components using React Testing Library and happy-dom."
+description: Create, run, and fix unit tests for React components using React Testing Library and happy-dom.
 args: "[--full]"
 disable-model-invocation: true
 metadata:
   author: shigurenimo
+  dev: true
 ---
 
 # Test React Components

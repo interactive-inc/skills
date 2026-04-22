@@ -4,6 +4,7 @@ description: Analyze and plan product backlogs with vision alignment.
 arguments: Optional. Issue description, feedbacks/ slug, or backlogs/ slug. If empty, proposes new backlog candidates from feedbacks/.
 metadata:
   author: shigurenimo
+  dev: true
 ---
 
 Record issues in `.docs/backlogs/`, aligning with index.md.

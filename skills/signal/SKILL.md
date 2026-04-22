@@ -1,9 +1,10 @@
 ---
 name: signal
-description: "Record customer voice to feedbacks/."
+description: Record customer voice to feedbacks/.
 arguments: Voice content. Metadata (who, source) is optional.
 metadata:
   author: shigurenimo
+  dev: true
 ---
 
 # Signal

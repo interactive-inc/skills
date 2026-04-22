@@ -5,6 +5,7 @@ user_invocable: true
 arguments: Issue 番号
 metadata:
   author: shigurenimo
+  dev: true
 ---
 
 Issue の計画に基づいて実装し、PR を作成する。

@@ -1,9 +1,10 @@
 ---
 name: issue-planning
-description: "Create technical plan text for a GitHub Issue."
+description: Create technical plan text for a GitHub Issue.
 arguments: Issue 番号
 metadata:
   author: shigurenimo
+  dev: true
 ---
 
 GitHub Issue の内容をもとにコードベースを読み、gh-issue-template に従った技術計画テキストを作成して返す。
