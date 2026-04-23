@@ -1,11 +1,13 @@
 ---
 name: test-react-components
 description: Create, run, and fix unit tests for React components using React Testing Library and happy-dom.
-args: "[--full]"
-disable-model-invocation: true
+when_to_use: Invoke when the user runs this slash command to create unit tests for React components under app/components/. Use --full for all components, otherwise only diff-against-main components are tested.
 metadata:
   author: shigurenimo
+  description: React コンポーネントの単体テストを React Testing Library + happy-dom で作成・実行・修正するスキル。--full で全探索、無指定で差分モード。サブエージェントに委任する。
   dev: true
+args: "[--full]"
+disable-model-invocation: true
 ---
 
 # Test React Components

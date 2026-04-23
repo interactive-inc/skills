@@ -1,11 +1,13 @@
 ---
 name: test-stories
-description: Create and update E2E tests from user stories using Playwright. Generate test scenarios based on story acceptance criteria.
-args: "[--full]"
-disable-model-invocation: true
+description: Create and update E2E tests from user stories using Playwright based on story acceptance criteria.
+when_to_use: Invoke when the user runs this slash command to generate E2E tests from user stories. Use --full for all stories, otherwise only diff-against-main stories are tested.
 metadata:
   author: shigurenimo
+  description: ユーザーストーリーから Playwright E2E テストを作成・実行するスキル。Acceptance Criteria を元にシナリオを生成。--full で全探索、無指定で差分モード。
   dev: true
+args: "[--full]"
+disable-model-invocation: true
 ---
 
 # Test Stories

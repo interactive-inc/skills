@@ -1,8 +1,10 @@
 ---
 name: stack-tanstack-app
-description: Build and enhance React applications using the TanStack ecosystem. Use this skill when working with TanStack libraries such as Router, Query, Form, or Table—whether starting a new project or integrating into existing code.
+description: Build and enhance React applications using the TanStack ecosystem (Router, Query, Form, Table) with Hono API and Drizzle ORM.
+when_to_use: Use when working with TanStack libraries such as Router, Query, Form, or Table, whether starting a new project or integrating into existing code.
 metadata:
   author: shigurenimo
+  description: TanStack エコシステム（Router, Query, Form, Table）を用いた React アプリケーション構築スキル。Hono API + Drizzle ORM との組み合わせで型安全な実装を行う。
   dev: true
 ---
 

@@ -1,15 +1,17 @@
 ---
 name: signal
-description: Record customer voice to feedbacks/.
+description: Record customer voice to signals/.
+when_to_use: Use to capture a customer voice/signal and save it to signals/. Invoke when the user shares user feedback or customer quotes.
 arguments: Voice content. Metadata (who, source) is optional.
 metadata:
   author: shigurenimo
+  description: 顧客の声（VoC）を signals/ ディレクトリに記録するスキル。
   dev: true
 ---
 
 # Signal
 
-Record customer voices to `.docs/feedbacks/` and attach issue analysis.
+Record customer voices to `.docs/signals/` and attach issue analysis.
 
 ## Input
 

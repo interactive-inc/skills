@@ -1,9 +1,11 @@
 ---
 name: backlog-planning
 description: "?"
+when_to_use: Invoke when the backlog skill delegates drafting of backlog content in the docs format (internal helper, not auto-fired).
 arguments: Issue description or backlogs/ slug.
 metadata:
   author: shigurenimo
+  description: backlog スキルから呼び出され、議論内容を受け取って `.docs/` フォーマットのバックログ下書きを返す内部ヘルパースキル。
   dev: true
 ---
 
