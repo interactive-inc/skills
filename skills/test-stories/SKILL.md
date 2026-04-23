@@ -4,7 +4,7 @@ description: Create and update E2E tests from user stories using Playwright base
 when_to_use: Invoke when the user runs this slash command to generate E2E tests from user stories. Use --full for all stories, otherwise only diff-against-main stories are tested.
 metadata:
   author: shigurenimo
-  description: ユーザーストーリーから Playwright E2E テストを作成・実行するスキル。Acceptance Criteria を元にシナリオを生成。--full で全探索、無指定で差分モード。
+  description: ユーザーストーリーから Playwright E2E テストを自動生成・実行する。
   dev: true
 args: "[--full]"
 disable-model-invocation: true

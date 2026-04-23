@@ -4,7 +4,7 @@ description: Build and enhance React applications using the TanStack ecosystem (
 when_to_use: Use when working with TanStack libraries such as Router, Query, Form, or Table, whether starting a new project or integrating into existing code.
 metadata:
   author: shigurenimo
-  description: TanStack エコシステム（Router, Query, Form, Table）を用いた React アプリケーション構築スキル。Hono API + Drizzle ORM との組み合わせで型安全な実装を行う。
+  description: TanStack（Router/Query/Form/Table）と Hono API + Drizzle で型安全な React アプリを構築する。
   dev: true
 ---
 
