@@ -16,8 +16,6 @@ skills/docs/references/index.md
 skills/docs/references/signals.md
 skills/docs/references/validation.md
 skills/docs/references/writing-rules.md
-skills/gh-issue-template/SKILL.md
-skills/gh-pr-template/SKILL.md
 skills/issue-planning/SKILL.md
 skills/issue/SKILL.md
 skills/pr/SKILL.md
