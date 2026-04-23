@@ -1,6 +1,6 @@
 ---
 name: backlog-planning
-description: Create or update product backlog content.
+description: "?"
 arguments: Issue description or backlogs/ slug.
 metadata:
   author: shigurenimo
