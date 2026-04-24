@@ -62,23 +62,28 @@ Interface → Application → Infrastructure → Domain
 ## 設計原則
 
 ### Domain 層
+
 - Entity は DB の存在を知らない (`fromRecord()` のようなメソッドは定義しない)
 - DB レコードから Entity への変換は Repository (インフラ層) の責務
 - ファクトリメソッドは具体的な名前を使う (`create()` より `createWithEmail()`)
 
 ### Application 層 (Service)
+
 - throw しない。カスタムエラーを return する
 - 戻り値は `Promise<Result | NotFoundError | ConflictError | ...>`
 
 ### Infrastructure 層
+
 - 外部サービス連携は全て Adapter として実装 (Lib には含めない)
 - メール送信、外部 API は Adapter の責務
 
 ### Interface 層
+
 - `result instanceof カスタムエラー` でエラー判定
 - HTTPException に変換してユーザーフレンドリーなメッセージを設定
 
 ### Lib 層
+
 - 横断的関心事のみ (認証、セッション、定数、ユーティリティ)
 - 外部サービス連携は含めない
 
@@ -86,58 +91,63 @@ Interface → Application → Infrastructure → Domain
 
 ### ファイル命名
 
-| レイヤー | パターン | 例 |
-|---------|---------|-----|
-| Entity | `xxx.entity.ts` | `customer.entity.ts` |
-| Value | `xxx.value.ts` | `email.value.ts` |
-| Repository | `xxx.repository.ts` | `customer.repository.ts` |
-| Adapter | `xxx.adapter.ts` | `email.adapter.ts`, `payment.adapter.ts` |
-| Use Case | `動詞-名詞.ts` | `create-customer.ts`, `update-customer.ts` |
-| Route | `resource.$param.ts` | `customers.$customer.ts` |
+| レイヤー   | パターン             | 例                                         |
+| ---------- | -------------------- | ------------------------------------------ |
+| Entity     | `xxx.entity.ts`      | `customer.entity.ts`                       |
+| Value      | `xxx.value.ts`       | `email.value.ts`                           |
+| Repository | `xxx.repository.ts`  | `customer.repository.ts`                   |
+| Adapter    | `xxx.adapter.ts`     | `email.adapter.ts`, `payment.adapter.ts`   |
+| Use Case   | `動詞-名詞.ts`       | `create-customer.ts`, `update-customer.ts` |
+| Route      | `resource.$param.ts` | `customers.$customer.ts`                   |
 
 ### Service (Use Case) 命名
 
-| 操作 | プレフィックス | 例 |
-|------|--------------|-----|
-| 作成 | `create-` | `create-customer.ts` |
-| 更新 | `update-` | `update-customer.ts` |
-| 削除 | `delete-` | `delete-customer.ts` |
-| 取得 | `fetch-` / `get-` | `fetch-customer.ts` |
-| 一括 | `bulk-` | `bulk-update-orders.ts` |
-| 同期 | `sync-` | `sync-users.ts` |
-| Upsert | `upsert-` | `upsert-profile.ts` |
+| 操作   | プレフィックス    | 例                      |
+| ------ | ----------------- | ----------------------- |
+| 作成   | `create-`         | `create-customer.ts`    |
+| 更新   | `update-`         | `update-customer.ts`    |
+| 削除   | `delete-`         | `delete-customer.ts`    |
+| 取得   | `fetch-` / `get-` | `fetch-customer.ts`     |
+| 一括   | `bulk-`           | `bulk-update-orders.ts` |
+| 同期   | `sync-`           | `sync-users.ts`         |
+| Upsert | `upsert-`         | `upsert-profile.ts`     |
 
 ### Route ファイル命名
 
-| URL | ファイル名 |
-|-----|-----------|
-| `/customers` | `customers.ts` |
-| `/customers/:customer` | `customers.$customer.ts` |
-| `/customers/:customer/orders` | `customers.$customer.orders.ts` |
+| URL                               | ファイル名                          |
+| --------------------------------- | ----------------------------------- |
+| `/customers`                      | `customers.ts`                      |
+| `/customers/:customer`            | `customers.$customer.ts`            |
+| `/customers/:customer/orders`     | `customers.$customer.orders.ts`     |
 | `/customers/:customer/orders/:id` | `customers.$customer.orders.$id.ts` |
-| `/customers/search` | `customers.search.ts` |
+| `/customers/search`               | `customers.search.ts`               |
 
 ## 参照ファイル
 
 各パターンの詳細は以下を参照:
 
 ### ドメイン層
+
 - [references/domain-entity.md](references/domain-entity.md) - Entity の実装パターン
 - [references/domain-value.md](references/domain-value.md) - Value Object の実装パターン
 - [references/domain-error.md](references/domain-error.md) - ドメインエラー
 
 ### アプリケーション層
+
 - [references/application-service.md](references/application-service.md) - Service (Use Case) の実装パターン
 
 ### インフラ層
+
 - [references/infrastructure-repository.md](references/infrastructure-repository.md) - Repository パターン
 - [references/infrastructure-adapter.md](references/infrastructure-adapter.md) - Adapter パターン
 
 ### インターフェース層
+
 - [references/interface-route-handler.md](references/interface-route-handler.md) - HTTP ハンドラー
 - [references/interface-entry-point.md](references/interface-entry-point.md) - エントリーポイント
 - [references/interface-error-handling.md](references/interface-error-handling.md) - エラーハンドリング
 
 ### 共通
+
 - [references/drizzle-schema.md](references/drizzle-schema.md) - DB スキーマ定義
 - [references/lib-structure.md](references/lib-structure.md) - Lib 層の構造

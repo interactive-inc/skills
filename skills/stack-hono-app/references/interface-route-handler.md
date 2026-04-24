@@ -8,32 +8,36 @@ Hono の Factory パターンでミドルウェアと組み合わせる。
 ## 設計原則
 
 ### 1. 薄いハンドラー
+
 - バリデーション、Service 呼び出し、レスポンス変換のみ
 - ビジネスロジックは Service (Application 層) に委譲
 
 ### 2. ファイルベースルーティング
+
 - `routes/customers.ts` → `/customers`
 - `routes/customers.$id.ts` → `/customers/:id`
 - `routes/customers.$id.orders.ts` → `/customers/:id/orders`
 
 ### 3. HTTP メソッドのエクスポート
+
 - `export const GET = ...`
 - `export const POST = ...`
 - `export const PUT = ...`
 - `export const DELETE = ...`
 
 ### 4. エラーハンドリング
+
 - Application 層は throw しない (カスタムエラーを return する)
 - Route Handler で `result instanceof カスタムエラー` をチェック
 - HTTPException に変換し、ユーザーフレンドリーなメッセージを設定
 
 ## 命名規則
 
-| URL パターン | ファイル名 |
-|-------------|-----------|
-| `/customers` | `customers.ts` |
-| `/customers/:customer` | `customers.$customer.ts` |
-| `/customers/:customer/orders` | `customers.$customer.orders.ts` |
+| URL パターン                           | ファイル名                               |
+| -------------------------------------- | ---------------------------------------- |
+| `/customers`                           | `customers.ts`                           |
+| `/customers/:customer`                 | `customers.$customer.ts`                 |
+| `/customers/:customer/orders`          | `customers.$customer.orders.ts`          |
 | `/customers/:customer/orders/:orderId` | `customers.$customer.orders.$orderId.ts` |
 
 ## 実装例
@@ -65,28 +69,25 @@ const zUpdateCustomerBody = z.object({
 
 // --- GET /customers/:id ---
 
-export const GET = factory.createHandlers(
-  authorized(),
-  async (c: Context) => {
-    const id = c.req.param("id")
+export const GET = factory.createHandlers(authorized(), async (c: Context) => {
+  const id = c.req.param("id")
 
-    const service = new FetchCustomer(c)
-    const result = await service.execute({ id })
+  const service = new FetchCustomer(c)
+  const result = await service.execute({ id })
 
-    if (result instanceof NotFoundError) {
-      throw new HTTPException(404, { message: "顧客が見つかりません" })
-    }
+  if (result instanceof NotFoundError) {
+    throw new HTTPException(404, { message: "顧客が見つかりません" })
+  }
 
-    return c.json({
-      id: result.customer.id,
-      name: result.customer.name,
-      email: result.customer.email,
-      status: result.customer.status,
-      createdAt: result.customer.createdAt.toISOString(),
-      updatedAt: result.customer.updatedAt.toISOString(),
-    })
-  },
-)
+  return c.json({
+    id: result.customer.id,
+    name: result.customer.name,
+    email: result.customer.email,
+    status: result.customer.status,
+    createdAt: result.customer.createdAt.toISOString(),
+    updatedAt: result.customer.updatedAt.toISOString(),
+  })
+})
 
 // --- POST /customers ---
 
@@ -151,26 +152,24 @@ export const PUT = factory.createHandlers(
 
 // --- DELETE /customers/:id ---
 
-export const DELETE = factory.createHandlers(
-  authorizedAdmin(),
-  async (c: Context) => {
-    const id = c.req.param("id")
+export const DELETE = factory.createHandlers(authorizedAdmin(), async (c: Context) => {
+  const id = c.req.param("id")
 
-    const service = new DeleteCustomer(c)
-    const result = await service.execute({ id })
+  const service = new DeleteCustomer(c)
+  const result = await service.execute({ id })
 
-    if (result instanceof NotFoundError) {
-      throw new HTTPException(404, { message: "顧客が見つかりません" })
-    }
+  if (result instanceof NotFoundError) {
+    throw new HTTPException(404, { message: "顧客が見つかりません" })
+  }
 
-    return c.json({ success: true })
-  },
-)
+  return c.json({ success: true })
+})
 ```
 
 ## エラーハンドリングの原則
 
 ### Application 層 (Service)
+
 - throw しない
 - カスタムエラーを return する
 
@@ -195,6 +194,7 @@ async execute(props: Props): Promise<Result | NotFoundError | ConflictError> {
 ```
 
 ### Interface 層 (Route Handler)
+
 - `result instanceof カスタムエラー` でチェック
 - HTTPException に変換
 - ユーザーフレンドリーなメッセージを設定

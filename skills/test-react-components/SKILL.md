@@ -15,12 +15,10 @@ metadata:
 
 メインエージェントは司令塔として動作し、実際の作業はサブエージェントに委任する。
 
-
 ## 引数
 
 - `--full` - 全探索モード (探索対象ディレクトリ内の全コンポーネントを対象)
 - 引数なし - 差分モード (main ブランチとの差分コンポーネントのみ対象)
-
 
 ## フロー図
 
@@ -50,7 +48,6 @@ flowchart TD
     S --> T[完了]
 ```
 
-
 ## 準備: 戦略ファイルを確認
 
 最初に `.claude/strategies/test-react-components.md` を確認する。
@@ -64,9 +61,7 @@ flowchart TD
 - テスト対象外
 - 発生した問題
 
-
 ## フェーズ1: コンポーネント一覧を取得
-
 
 ### 差分モード (デフォルト)
 
@@ -76,7 +71,6 @@ main ブランチとの差分からコンポーネントファイルを取得す
 git diff --name-only main -- 'app/components/**/*.tsx' | grep -v '\.test\.tsx$' | grep -v '/ui/'
 ```
 
-
 ### 全探索モード (--full)
 
 探索対象ディレクトリから全コンポーネントを取得する。
@@ -84,7 +78,6 @@ git diff --name-only main -- 'app/components/**/*.tsx' | grep -v '\.test\.tsx$' 
 ```bash
 find app/components -name "*.tsx" -not -name "*.test.tsx" -not -path "*/ui/*"
 ```
-
 
 ## フェーズ2: 除外フィルタ
 
@@ -96,8 +89,7 @@ EXCLUDE_HOOKS="useLoaderData\|useParams\|useSearchParams\|useNavigate\|useLocati
 grep -rl "$EXCLUDE_HOOKS" app/components --include="*.tsx" | grep -v "\.test\.tsx"
 ```
 
-既存の *.test.tsx ファイルを探し、対応するソースファイルをテスト済みとして除外する。
-
+既存の \*.test.tsx ファイルを探し、対応するソースファイルをテスト済みとして除外する。
 
 ## フェーズ3: セットアップ確認
 
@@ -114,7 +106,6 @@ bun add -D @testing-library/react @testing-library/dom happy-dom
 ```
 
 `tests/setup-dom.ts` と `bunfig.toml` が存在することを確認。
-
 
 ## フェーズ4: 並列でテスト作成
 
@@ -148,7 +139,6 @@ bun add -D @testing-library/react @testing-library/dom happy-dom
 - ファイルパスと理由のペアで報告
 ```
 
-
 ## フェーズ5: テスト実行と修正
 
 ```bash
@@ -158,7 +148,6 @@ bun test app/components
 失敗したテストがあれば修正する。
 
 全テストがパスするまで繰り返す。
-
 
 ## フェーズ6: 全体テスト確認
 
@@ -173,7 +162,6 @@ bun test
 - グローバル環境 (window, document) を上書きするテストが他に影響
 - `beforeAll` / `afterAll` で環境を保存・復元していない
 
-
 ## テスト作成ルール
 
 - `bun:test` から `test` と `expect` を使用
@@ -182,7 +170,6 @@ bun test
 - ファイル名: `*.test.tsx`
 - 同じディレクトリに配置
 - 1テスト1アサーション
-
 
 ## テンプレート
 
@@ -210,7 +197,6 @@ test("正常系: disabled 属性が適用される", () => {
 })
 ```
 
-
 ## Link を含むコンポーネント
 
 react-router の `Link` を使用するコンポーネントは `MemoryRouter` でラップする。
@@ -228,14 +214,12 @@ test("正常系: リンクがレンダリングされる", () => {
 })
 ```
 
-
 ## クエリ優先順位
 
 1. `getByRole` - アクセシビリティロール
 2. `getByLabelText` - フォーム要素
 3. `getByText` - テキストコンテンツ
 4. `getByTestId` - 最終手段
-
 
 ## 戦略ファイルの更新
 

@@ -9,8 +9,7 @@ Hono の型安全な API クライアント。
 import { hc } from "hono/client"
 import type { AppType } from "@/api/app"
 
-const endpoint =
-  typeof window !== "undefined" ? location.origin : "http://localhost"
+const endpoint = typeof window !== "undefined" ? location.origin : "http://localhost"
 
 export const client = hc<AppType>(endpoint, {
   init: { credentials: "include", mode: "cors" },

@@ -147,7 +147,7 @@ export function formatDate(date: Date): string {
 export function detectChanges<T extends Record<string, unknown>>(
   before: T,
   after: Partial<T>,
-  fields: (keyof T)[]
+  fields: (keyof T)[],
 ): Record<string, { before: unknown; after: unknown }> {
   const changes: Record<string, { before: unknown; after: unknown }> = {}
 

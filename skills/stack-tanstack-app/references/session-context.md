@@ -76,11 +76,7 @@ export function SessionProvider(props: Props) {
     refresh,
   }
 
-  return (
-    <SessionContext.Provider value={value}>
-      {props.children}
-    </SessionContext.Provider>
-  )
+  return <SessionContext.Provider value={value}>{props.children}</SessionContext.Provider>
 }
 ```
 

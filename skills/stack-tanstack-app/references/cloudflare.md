@@ -10,7 +10,7 @@ import type { DrizzleD1Database } from "drizzle-orm/d1"
 import type * as schema from "@/schema"
 
 export type HonoEnv = {
-  Bindings: Cloudflare.Env  // Cloudflare 固有
+  Bindings: Cloudflare.Env // Cloudflare 固有
   Variables: {
     database: DrizzleD1Database<typeof schema>
     userId: string | null
@@ -28,7 +28,8 @@ import { factory } from "@/api/factory"
 import * as schema from "@/schema"
 
 export const databaseMiddleware = factory.createMiddleware((c, next) => {
-  if (!c.env.DB) {  // Cloudflare D1 binding
+  if (!c.env.DB) {
+    // Cloudflare D1 binding
     throw new HTTPException(500, { message: "Database not configured" })
   }
 
@@ -52,17 +53,13 @@ export default defineConfig({
   schema: "src/schema.ts",
   dialect: "sqlite",
   get dbCredentials() {
-    const hasDatabase = existsSync(
-      ".wrangler/state/v3/d1/miniflare-D1DatabaseObject",
-    )
+    const hasDatabase = existsSync(".wrangler/state/v3/d1/miniflare-D1DatabaseObject")
 
     if (hasDatabase === false) {
       return { url: ":memory:" }
     }
 
-    const fileNames = readdirSync(
-      ".wrangler/state/v3/d1/miniflare-D1DatabaseObject",
-    )
+    const fileNames = readdirSync(".wrangler/state/v3/d1/miniflare-D1DatabaseObject")
 
     const fileName = fileNames.find((fileName) => {
       return fileName.endsWith(".sqlite")

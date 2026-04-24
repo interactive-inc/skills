@@ -143,10 +143,7 @@ export function TimelineContent() {
 
   return (
     <Suspense fallback={<ContentFallback />}>
-      <PostList
-        query={query}
-        onReaction={(id) => mutation.mutate(id)}
-      />
+      <PostList query={query} onReaction={(id) => mutation.mutate(id)} />
     </Suspense>
   )
 }

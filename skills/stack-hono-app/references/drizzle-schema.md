@@ -69,19 +69,16 @@ export const productCategories = sqliteTable("product_categories", {
   categoryId: text("category_id", { length: 36 }).notNull(),
 })
 
-export const productCategoriesRelations = relations(
-  productCategories,
-  ({ one }) => ({
-    product: one(products, {
-      fields: [productCategories.productId],
-      references: [products.id],
-    }),
-    category: one(categories, {
-      fields: [productCategories.categoryId],
-      references: [categories.id],
-    }),
-  })
-)
+export const productCategoriesRelations = relations(productCategories, ({ one }) => ({
+  product: one(products, {
+    fields: [productCategories.productId],
+    references: [products.id],
+  }),
+  category: one(categories, {
+    fields: [productCategories.categoryId],
+    references: [categories.id],
+  }),
+}))
 ```
 
 ## 命名規則
@@ -99,15 +96,15 @@ export const productCategoriesRelations = relations(
 
 ### 型マッピング
 
-| TypeScript | SQLite | Drizzle |
-|-----------|--------|---------|
-| `string` | TEXT | `text()` |
-| `number` (整数) | INTEGER | `integer()` |
-| `number` (小数) | REAL | `real()` |
-| `boolean` | INTEGER (0/1) | `integer({ mode: "boolean" })` |
-| `Date` | INTEGER (Unix) | `integer({ mode: "timestamp" })` |
-| `enum` | TEXT | `text({ enum: [...] })` |
-| `JSON` | TEXT | `text({ mode: "json" })` |
+| TypeScript      | SQLite         | Drizzle                          |
+| --------------- | -------------- | -------------------------------- |
+| `string`        | TEXT           | `text()`                         |
+| `number` (整数) | INTEGER        | `integer()`                      |
+| `number` (小数) | REAL           | `real()`                         |
+| `boolean`       | INTEGER (0/1)  | `integer({ mode: "boolean" })`   |
+| `Date`          | INTEGER (Unix) | `integer({ mode: "timestamp" })` |
+| `enum`          | TEXT           | `text({ enum: [...] })`          |
+| `JSON`          | TEXT           | `text({ mode: "json" })`         |
 
 ## スキーマエクスポート
 

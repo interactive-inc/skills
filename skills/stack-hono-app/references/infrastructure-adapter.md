@@ -9,12 +9,12 @@ REST API や GraphQL の呼び出しを抽象化し、ドメイン層から外�
 
 ## 命名規則
 
-| 外部サービス | ファイル名 |
-|-------------|-----------|
-| 外部 API | `xxx-api.adapter.ts` |
-| メール送信 | `email.adapter.ts` |
+| 外部サービス | ファイル名           |
+| ------------ | -------------------- |
+| 外部 API     | `xxx-api.adapter.ts` |
+| メール送信   | `email.adapter.ts`   |
 | 決済サービス | `payment.adapter.ts` |
-| ストレージ | `storage.adapter.ts` |
+| ストレージ   | `storage.adapter.ts` |
 
 ## 実装パターン (REST API)
 
@@ -22,13 +22,9 @@ REST API や GraphQL の呼び出しを抽象化し、ドメイン層から外�
 // infrastructure/adapters/payment.adapter.ts
 import type { Context } from "@/env"
 
-type ChargeResult =
-  | { success: true; chargeId: string }
-  | { success: false; error: string }
+type ChargeResult = { success: true; chargeId: string } | { success: false; error: string }
 
-type RefundResult =
-  | { success: true }
-  | { success: false; error: string }
+type RefundResult = { success: true } | { success: false; error: string }
 
 /**
  * 決済サービスアダプター
@@ -47,7 +43,7 @@ export class PaymentAdapter {
     const response = await fetch("https://api.payment.example.com/charges", {
       method: "POST",
       headers: {
-        "Authorization": `Bearer ${this.c.env.PAYMENT_API_KEY}`,
+        Authorization: `Bearer ${this.c.env.PAYMENT_API_KEY}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify(params),
@@ -65,15 +61,12 @@ export class PaymentAdapter {
    * 返金を実行する
    */
   async refund(chargeId: string): Promise<RefundResult> {
-    const response = await fetch(
-      `https://api.payment.example.com/charges/${chargeId}/refund`,
-      {
-        method: "POST",
-        headers: {
-          "Authorization": `Bearer ${this.c.env.PAYMENT_API_KEY}`,
-        },
-      }
-    )
+    const response = await fetch(`https://api.payment.example.com/charges/${chargeId}/refund`, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${this.c.env.PAYMENT_API_KEY}`,
+      },
+    })
 
     if (!response.ok) {
       return { success: false, error: "返金に失敗しました" }
@@ -101,9 +94,7 @@ const GET_USER_QUERY = `
   }
 `
 
-type GetUserResult =
-  | { success: true; user: User }
-  | { success: false; error: string }
+type GetUserResult = { success: true; user: User } | { success: false; error: string }
 
 /**
  * 外部 API アダプター (GraphQL)
@@ -115,7 +106,7 @@ export class ExternalApiAdapter {
     const response = await fetch("https://api.example.com/graphql", {
       method: "POST",
       headers: {
-        "Authorization": `Bearer ${this.c.env.EXTERNAL_API_KEY}`,
+        Authorization: `Bearer ${this.c.env.EXTERNAL_API_KEY}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
@@ -150,9 +141,7 @@ export class ExternalApiAdapter {
 成功/失敗を明示的に表現:
 
 ```ts
-type Result<T> =
-  | { success: true; data: T }
-  | { success: false; error: string }
+type Result<T> = { success: true; data: T } | { success: false; error: string }
 ```
 
 ### 2. Context 注入
@@ -234,9 +223,7 @@ type SendEmailParams = {
   html: string
 }
 
-type SendEmailResult =
-  | { success: true }
-  | { success: false; error: string }
+type SendEmailResult = { success: true } | { success: false; error: string }
 
 /**
  * メール送信アダプター
@@ -248,7 +235,7 @@ export class EmailAdapter {
     const response = await fetch("https://api.email.example.com/send", {
       method: "POST",
       headers: {
-        "Authorization": `Bearer ${this.c.env.EMAIL_API_KEY}`,
+        Authorization: `Bearer ${this.c.env.EMAIL_API_KEY}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({

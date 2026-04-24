@@ -15,12 +15,10 @@ metadata:
 
 メインエージェントは司令塔として動作し、実際の作業はサブエージェントに委任する。
 
-
 ## 引数
 
 - `--full` - 全探索モード (戦略ファイルの全ストーリーを対象)
 - 引数なし - 差分モード (main ブランチとの差分ストーリーのみ対象)
-
 
 ## フロー図
 
@@ -44,7 +42,6 @@ flowchart TD
     M -->|成功| O[完了]
 ```
 
-
 ## 準備: 戦略ファイルを確認
 
 最初に `.claude/strategies/test-stories.md` を確認する。
@@ -60,9 +57,7 @@ flowchart TD
 - `STORIES_DIR` - ストーリーファイルのディレクトリ
 - テスト対象外
 
-
 ## フェーズ1: テスト対象ストーリーを特定
-
 
 ### 差分モード (デフォルト)
 
@@ -73,7 +68,6 @@ main ブランチとの差分からストーリーファイルを取得する。
 git diff --name-only main -- '${STORIES_DIR}/*.md'
 ```
 
-
 ### 全探索モード (--full)
 
 参照ドキュメントのディレクトリ内の全ストーリーを対象とする。
@@ -83,9 +77,7 @@ git diff --name-only main -- '${STORIES_DIR}/*.md'
 ls ${STORIES_DIR}/*.md
 ```
 
-
 ## フェーズ2: 初期セットアップ確認
-
 
 ### playwright.config.ts
 
@@ -97,7 +89,6 @@ ls ${STORIES_DIR}/*.md
 - `workers: 4` (ローカル) / `2` (CI)
 - `reuseExistingServer: true`
 
-
 ### .gitignore
 
 以下のエントリがなければ追加:
@@ -106,7 +97,6 @@ ls ${STORIES_DIR}/*.md
 test-results/
 playwright-report/
 ```
-
 
 ## フェーズ3: 不足テストを特定
 
@@ -120,7 +110,6 @@ ls tests/stories/*.e2e.ts 2>/dev/null | xargs -I {} basename {} .e2e.ts | sort >
 # 不足テスト
 comm -23 /tmp/stories.txt /tmp/story-tests.txt
 ```
-
 
 ## フェーズ4: 並列でテスト作成
 
@@ -156,15 +145,12 @@ FrontMatterによる分類:
 作成したテストファイルのパスを報告する。
 ```
 
-
 ### 命名規則
 
 - ストーリー: `${STORIES_DIR}/<story-name>.md`
 - テスト: `tests/stories/<story-name>.e2e.ts`
 
-
 ## フェーズ5: テスト実行と修正
-
 
 ### 差分モード
 
@@ -173,7 +159,6 @@ FrontMatterによる分類:
 ```bash
 bunx playwright test --project=stories -g "story1|story2"
 ```
-
 
 ### 全探索モード
 
@@ -186,7 +171,6 @@ bunx playwright test --project=stories
 失敗したテストがあれば修正する。
 
 全テストがパスするまで繰り返す。
-
 
 ## 戦略ファイルの更新
 

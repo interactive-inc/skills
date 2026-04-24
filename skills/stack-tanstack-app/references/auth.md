@@ -61,10 +61,7 @@ type SessionPayload = {
   userId: string
 }
 
-export async function createSessionToken(
-  userId: string,
-  secret: string,
-): Promise<string> {
+export async function createSessionToken(userId: string, secret: string): Promise<string> {
   const key = new TextEncoder().encode(secret)
   return new SignJWT({ userId })
     .setProtectedHeader({ alg: "HS256" })
@@ -72,10 +69,7 @@ export async function createSessionToken(
     .sign(key)
 }
 
-export async function verifySessionToken(
-  token: string,
-  secret: string,
-): Promise<SessionPayload> {
+export async function verifySessionToken(token: string, secret: string): Promise<SessionPayload> {
   const key = new TextEncoder().encode(secret)
   const { payload } = await jwtVerify(token, key)
   return payload as SessionPayload
@@ -206,22 +200,18 @@ export const POST = factory.createHandlers(
 ## Admin Check
 
 ```ts
-export const GET = factory.createHandlers(
-  authMiddleware,
-  async (c) => {
-    const userId = getAuthUserId(c)
-    const db = c.get("database")
+export const GET = factory.createHandlers(authMiddleware, async (c) => {
+  const userId = getAuthUserId(c)
+  const db = c.get("database")
 
-    const user = await db.query.users.findFirst({
-      where: eq(users.id, userId),
-    })
+  const user = await db.query.users.findFirst({
+    where: eq(users.id, userId),
+  })
 
-    if (user?.role !== "admin") {
-      throw new HTTPException(403, { message: "管理者権限が必要です" })
-    }
+  if (user?.role !== "admin") {
+    throw new HTTPException(403, { message: "管理者権限が必要です" })
+  }
 
-    // 管理者のみ実行可能な処理
-  },
-)
+  // 管理者のみ実行可能な処理
+})
 ```
-

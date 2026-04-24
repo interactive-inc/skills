@@ -26,10 +26,13 @@ export default factory
   // グローバルミドルウェア
   .use(contextStorage())
   .use(databaseMiddleware)
-  .use("/*", cors({
-    credentials: true,
-    origin: (origin) => origin,
-  }))
+  .use(
+    "/*",
+    cors({
+      credentials: true,
+      origin: (origin) => origin,
+    }),
+  )
 
   // ルート定義
   .get("/customers", ...customers.GET)

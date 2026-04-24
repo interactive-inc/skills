@@ -41,7 +41,7 @@ FrontMatter:
 
 ```yaml
 ---
-notion-page-id: {Notion Page ID}
+notion-page-id: { Notion Page ID }
 ---
 ```
 
@@ -51,14 +51,17 @@ Body:
 # {Theme name}
 
 ## Voices
+
 - {Summary of original} [^1]
 - {Summary of original} [^2]
 
 ## Issues
+
 - {Analyzed issue 1}
 - {Analyzed issue 2}
 
 [^1]: "{Original}" ({who}, {YYYY-MM-DD}, {source})
+
 [^2]: "{Original}" ({who}, {YYYY-MM-DD}, {source})
 ```
 
