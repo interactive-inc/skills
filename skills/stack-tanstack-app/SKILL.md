@@ -1,7 +1,8 @@
 ---
 name: stack-tanstack-app
 description: Build and enhance React applications using the TanStack ecosystem (Router, Query, Form, Table) with Hono API and Drizzle ORM.
-when_to_use: Use when working with TanStack libraries such as Router, Query, Form, or Table, whether starting a new project or integrating into existing code.
+user-invocable: true
+disable-model-invocation: false
 metadata:
   author: shigurenimo
   description: TanStack（Router/Query/Form/Table）と Hono API + Drizzle で型安全な React アプリを構築する。

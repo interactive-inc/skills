@@ -1,8 +1,8 @@
 ---
 name: signal
 description: Record customer voice to signals/.
-when_to_use: Use to capture a customer voice/signal and save it to signals/. Invoke when the user shares user feedback or customer quotes.
-arguments: Voice content. Metadata (who, source) is optional.
+user-invocable: true
+disable-model-invocation: false
 metadata:
   author: shigurenimo
   description: 顧客の声（VoC）を signals/ ディレクトリに記録するスキル。

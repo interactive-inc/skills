@@ -1,13 +1,12 @@
 ---
 name: test-lib
 description: Create, run, and fix unit tests for libraries and utility modules.
-when_to_use: Invoke when the user runs this slash command to create unit tests for library/utility modules, optionally using --full to cover all files instead of the diff against main.
+user-invocable: true
+disable-model-invocation: true
 metadata:
   author: shigurenimo
   description: ライブラリ・ユーティリティモジュールの単体テストを作成・実行・修正するスキル。--full で全探索モード、無指定で main 差分モード。サブエージェントに作業を委任する。
   dev: true
-args: "[--full]"
-disable-model-invocation: true
 ---
 
 # Test Lib

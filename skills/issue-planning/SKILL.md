@@ -1,8 +1,8 @@
 ---
 name: issue-planning
-description: Create technical plan text for a GitHub Issue.
-when_to_use: Use when drafting a technical implementation plan for a GitHub Issue (no GitHub writes).
-arguments: Issue 番号
+description: Create technical plan text for a GitHub Issue from codebase and issue content.
+user-invocable: true
+disable-model-invocation: false
 metadata:
   author: shigurenimo
   description: GitHub Issue の内容とコードベースから技術計画テキストを作成して返す（GitHub 操作はしない）。

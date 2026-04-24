@@ -1,7 +1,8 @@
 ---
 name: stack-hono-app
 description: TypeScript backend development with Hono framework using Clean Architecture, layered structure, Repository pattern, Use Cases, and error handling.
-when_to_use: Use when building or extending a Hono-based TypeScript API backend and clean-architecture layering (domain/application/infrastructure/interface) is required.
+user-invocable: true
+disable-model-invocation: false
 metadata:
   author: shigurenimo
   description: Hono フレームワークを用いた TypeScript バックエンド開発スキル。Clean Architecture に基づくレイヤー構成、Repository パターン、Use Case 実装、エラーハンドリングをカバー。

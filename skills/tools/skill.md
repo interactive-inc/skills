@@ -1,7 +1,8 @@
 ---
 name: tools
 description: List all available tools in the current session, grouped by MCP server prefix.
-when_to_use: Invoke when the user wants to inspect the tool definitions available in the current session, including MCP tools grouped by prefix.
+user-invocable: true
+disable-model-invocation: false
 metadata:
   description: 現在のセッションで利用可能な全ツール定義を参照して出力するスキル。MCP ツールはサーバープレフィックスでグループ化する。
   dev: true
