@@ -1,10 +1,9 @@
-claude.agents/backlog-planner.md
-claude.agents/debugger.md
-claude.agents/hacker.md
-claude.agents/issue-planner.md
-claude.commands/refactor.md
-claude.rules/md.md
-claude.rules/ts.md
+agents/backlog-planner.md
+agents/debugger.md
+agents/hacker.md
+agents/issue-planner.md
+rules/md.md
+rules/ts.md
 skills/backlog-planning/SKILL.md
 skills/backlog/SKILL.md
 skills/docs/SKILL.md
