@@ -27,17 +27,20 @@ If metadata is omitted, use "unknown". Date is auto-filled with today.
 - Use the `.docs` skill to read index.md and understand the product vision
 - Read `.docs/feedbacks/index.md` to grasp existing themes
 - Determine if a similar theme exists
-  - **Yes**: Read that slug.md, append to `## Voices`, update `## Issues` if needed
-  - **No**: Create a new slug.md
+  - **Yes**: Read that slug.md, parse `---` separator, append within the Claude zone (below `---`)
+  - **No**: Create a new slug.md with the zone-separated layout
 - Cross-check against index.md vision, principles, and out-of-scope
   - If the request is outside vision, note it in `## Issues`
 - Report analysis briefly
 
 Do not touch `index.md`. Regenerating `index.md` is handled by the separate `signals-index` skill.
+Do not touch the human zone (above `---`). Only rewrite the Claude zone (below `---`).
 
 ## slug.md format
 
-FrontMatter:
+詳細は `.claude/skills/docs/references/signals.md` を参照。要点のみ。
+
+FrontMatter (任意):
 
 ```yaml
 ---
@@ -45,20 +48,25 @@ notion-page-id: { Notion Page ID }
 ---
 ```
 
-Body:
+Body (人間ゾーン / Claude ゾーンを `---` で分離):
 
 ```md
 # {Theme name}
 
-## Voices
+最終更新: YYYY-MM-DD
 
-- {Summary of original} [^1]
-- {Summary of original} [^2]
+ここから --- までは人間が自由に書く。Claude は読み取りのみで書き換えない。
 
-## Issues
+---
 
-- {Analyzed issue 1}
-- {Analyzed issue 2}
+ここから下は signal スキルが再生成する。手で書いた変更は次回上書きされる。
+
+{声の要点を文章で記述} [^1]。{別の声があれば続けて記述} [^2]。
+
+## 課題
+
+- {分析した課題 1}
+- {分析した課題 2}
 
 [^1]: "{Original}" ({who}, {YYYY-MM-DD}, {source})
 
@@ -66,6 +74,14 @@ Body:
 ```
 
 Footnotes hold the original text, who, date, and source. Body stays concise with summaries only.
+
+### ゾーン分離 (`---`)
+
+frontmatter があるファイルでは、`---` の出現順は: (1) frontmatter 開始 / (2) frontmatter 終端 / (3) 人間ゾーンと Claude ゾーンの分離。3 番目以降の最初の `---` を上書き境界として扱う。
+
+frontmatter が無いファイルでは、本文先頭から最初の `---` が分離線。
+
+人間ゾーンが空でもよい。`最終更新` 行は人間ゾーンの先頭に置き、Claude ゾーンを再生成したときに今日の日付に更新してよい。
 
 ## index.md
 
