@@ -33,12 +33,10 @@ Hono の Factory パターンでミドルウェアと組み合わせる。
 
 ## 命名規則
 
-| URL パターン                           | ファイル名                               |
-| -------------------------------------- | ---------------------------------------- |
-| `/customers`                           | `customers.ts`                           |
-| `/customers/:customer`                 | `customers.$customer.ts`                 |
-| `/customers/:customer/orders`          | `customers.$customer.orders.ts`          |
-| `/customers/:customer/orders/:orderId` | `customers.$customer.orders.$orderId.ts` |
+- `/customers` ⇒ `customers.ts`
+- `/customers/:customer` ⇒ `customers.$customer.ts`
+- `/customers/:customer/orders` ⇒ `customers.$customer.orders.ts`
+- `/customers/:customer/orders/:orderId` ⇒ `customers.$customer.orders.$orderId.ts`
 
 ## 実装例
 

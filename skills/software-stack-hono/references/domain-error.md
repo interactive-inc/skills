@@ -97,12 +97,10 @@ export class EntityNotFoundError extends DomainError {
 
 ## 使い分け
 
-| エラー                | 使用場面                |
-| --------------------- | ----------------------- |
-| `EntityCreationError` | INSERT 失敗時           |
-| `EntityUpdateError`   | UPDATE 失敗時           |
-| `EntityDeletionError` | DELETE 失敗時           |
-| `EntityNotFoundError` | SELECT で見つからない時 |
+- `EntityCreationError` ⇒ INSERT 失敗時
+- `EntityUpdateError` ⇒ UPDATE 失敗時
+- `EntityDeletionError` ⇒ DELETE 失敗時
+- `EntityNotFoundError` ⇒ SELECT で見つからない時
 
 ## 使用例
 

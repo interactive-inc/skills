@@ -99,14 +99,12 @@ export class AddressValue implements Props {
 
 ## 命名規則
 
-| 種類       | クラス名        | ファイル名          |
-| ---------- | --------------- | ------------------- |
-| ID         | `IdValue`       | `id.value.ts`       |
-| メール     | `EmailValue`    | `email.value.ts`    |
-| 名前       | `NameValue`     | `name.value.ts`     |
-| パスワード | `PasswordValue` | `password.value.ts` |
-| 金額       | `MoneyValue`    | `money.value.ts`    |
-| 住所       | `AddressValue`  | `address.value.ts`  |
+- ID ⇒ `IdValue` / `id.value.ts`
+- メール ⇒ `EmailValue` / `email.value.ts`
+- 名前 ⇒ `NameValue` / `name.value.ts`
+- パスワード ⇒ `PasswordValue` / `password.value.ts`
+- 金額 ⇒ `MoneyValue` / `money.value.ts`
+- 住所 ⇒ `AddressValue` / `address.value.ts`
 
 ## 設計原則
 
@@ -128,14 +126,12 @@ constructor(value: string) {
 }
 ```
 
-### 3. Entity との違い
+### Entity との違い
 
-| 特性           | Entity                             | Value Object               |
-| -------------- | ---------------------------------- | -------------------------- |
-| 識別           | ID で識別                          | 値で識別                   |
-| 可変性         | イミュータブル (with\* で新規作成) | イミュータブル             |
-| ライフサイクル | あり (createdAt, updatedAt)        | なし                       |
-| 等価性         | ID が同じなら同一                  | 全フィールドが同じなら同一 |
+- 識別: Entity は ID、Value Object は値
+- 可変性: 両者ともイミュータブル（Entity は `with*()` で新規作成）
+- ライフサイクル: Entity はあり（createdAt, updatedAt）、Value Object はなし
+- 等価性: Entity は ID が同じなら同一、Value Object は全フィールドが同じなら同一
 
 ## 実装例: パスワード
 

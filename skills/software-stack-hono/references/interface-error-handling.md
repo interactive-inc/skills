@@ -222,15 +222,13 @@ export const PUT = factory.createHandlers(
 
 ## HTTP ステータスコードガイドライン
 
-| カスタムエラー         | ステータス | 例                                       |
-| ---------------------- | ---------- | ---------------------------------------- |
-| `NotFoundError`        | 404        | 顧客が見つかりません                     |
-| `ValidationError`      | 400        | 名前は必須です                           |
-| `AuthenticationError`  | 401        | ログインしてください                     |
-| `ForbiddenError`       | 403        | 管理者権限が必要です                     |
-| `ConflictError`        | 409        | このメールアドレスは既に使用されています |
-| `InternalError`        | 500        | 予期しないエラーが発生しました           |
-| `ExternalServiceError` | 502        | 外部サービスとの連携に失敗しました       |
+- `NotFoundError` ⇒ 404（顧客が見つかりません）
+- `ValidationError` ⇒ 400（名前は必須です）
+- `AuthenticationError` ⇒ 401（ログインしてください）
+- `ForbiddenError` ⇒ 403（管理者権限が必要です）
+- `ConflictError` ⇒ 409（このメールアドレスは既に使用されています）
+- `InternalError` ⇒ 500（予期しないエラーが発生しました）
+- `ExternalServiceError` ⇒ 502（外部サービスとの連携に失敗しました）
 
 ## グローバルエラーハンドラー
 

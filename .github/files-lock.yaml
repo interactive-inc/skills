@@ -7,6 +7,7 @@ RyukyuInteractive/inta:
   - rules/ts.md
   - skills/backlog-planning/SKILL.md
   - skills/backlog/SKILL.md
+  - skills/docs-refactor/SKILL.md
   - skills/docs/SKILL.md
   - skills/docs/references/backlogs.md
   - skills/docs/references/decisions.md
@@ -19,28 +20,38 @@ RyukyuInteractive/inta:
   - skills/issue-planning/SKILL.md
   - skills/issue/SKILL.md
   - skills/pr/SKILL.md
-  - skills/signal/SKILL.md
-  - skills/stack-hono-app/SKILL.md
-  - skills/stack-hono-app/references/application-service.md
-  - skills/stack-hono-app/references/domain-entity.md
-  - skills/stack-hono-app/references/domain-error.md
-  - skills/stack-hono-app/references/domain-value.md
-  - skills/stack-hono-app/references/drizzle-schema.md
-  - skills/stack-hono-app/references/infrastructure-adapter.md
-  - skills/stack-hono-app/references/infrastructure-repository.md
-  - skills/stack-hono-app/references/interface-entry-point.md
-  - skills/stack-hono-app/references/interface-error-handling.md
-  - skills/stack-hono-app/references/interface-route-handler.md
-  - skills/stack-hono-app/references/lib-structure.md
-  - skills/stack-tanstack-app/SKILL.md
-  - skills/stack-tanstack-app/references/auth.md
-  - skills/stack-tanstack-app/references/cloudflare.md
-  - skills/stack-tanstack-app/references/hc-client.md
-  - skills/stack-tanstack-app/references/hono-api.md
-  - skills/stack-tanstack-app/references/session-context.md
-  - skills/stack-tanstack-app/references/suspense-use.md
-  - skills/stack-tanstack-app/references/tanstack-start/basic-auth.md
+  - skills/software-design/README.md
+  - skills/software-design/SKILL.md
+  - skills/software-design/references/architecture.md
+  - skills/software-design/references/error-handling.md
+  - skills/software-design/references/fluent-api.md
+  - skills/software-design/references/fsm.md
+  - skills/software-design/references/phantom-type.md
+  - skills/software-design/references/react.md
+  - skills/software-design/references/reducer.md
+  - skills/software-design/references/service-layer.md
+  - skills/software-design/references/ux-five-planes.md
+  - skills/software-design/references/value-object.md
+  - skills/software-stack-cli/SKILL.md
+  - skills/software-stack-hono/SKILL.md
+  - skills/software-stack-hono/references/application-service.md
+  - skills/software-stack-hono/references/domain-entity.md
+  - skills/software-stack-hono/references/domain-error.md
+  - skills/software-stack-hono/references/domain-value.md
+  - skills/software-stack-hono/references/drizzle-schema.md
+  - skills/software-stack-hono/references/infrastructure-adapter.md
+  - skills/software-stack-hono/references/infrastructure-repository.md
+  - skills/software-stack-hono/references/interface-entry-point.md
+  - skills/software-stack-hono/references/interface-error-handling.md
+  - skills/software-stack-hono/references/interface-route-handler.md
+  - skills/software-stack-hono/references/lib-structure.md
+  - skills/software-stack-tanstack/SKILL.md
+  - skills/software-stack-tanstack/references/auth.md
+  - skills/software-stack-tanstack/references/cloudflare.md
+  - skills/software-stack-tanstack/references/hc-client.md
+  - skills/software-stack-tanstack/references/hono-api.md
+  - skills/software-stack-tanstack/references/session-context.md
+  - skills/software-stack-tanstack/references/suspense-use.md
+  - skills/software-stack-tanstack/references/tanstack-start/basic-auth.md
+  - skills/software-stack/SKILL.md
   - skills/test-lib/SKILL.md
-  - skills/test-react-components/SKILL.md
-  - skills/test-stories/SKILL.md
-  - skills/tools/skill.md

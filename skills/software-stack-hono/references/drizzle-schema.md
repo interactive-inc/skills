@@ -96,15 +96,13 @@ export const productCategoriesRelations = relations(productCategories, ({ one })
 
 ### 型マッピング
 
-| TypeScript      | SQLite         | Drizzle                          |
-| --------------- | -------------- | -------------------------------- |
-| `string`        | TEXT           | `text()`                         |
-| `number` (整数) | INTEGER        | `integer()`                      |
-| `number` (小数) | REAL           | `real()`                         |
-| `boolean`       | INTEGER (0/1)  | `integer({ mode: "boolean" })`   |
-| `Date`          | INTEGER (Unix) | `integer({ mode: "timestamp" })` |
-| `enum`          | TEXT           | `text({ enum: [...] })`          |
-| `JSON`          | TEXT           | `text({ mode: "json" })`         |
+- `string` ⇒ TEXT / `text()`
+- `number`（整数）⇒ INTEGER / `integer()`
+- `number`（小数）⇒ REAL / `real()`
+- `boolean` ⇒ INTEGER (0/1) / `integer({ mode: "boolean" })`
+- `Date` ⇒ INTEGER (Unix) / `integer({ mode: "timestamp" })`
+- `enum` ⇒ TEXT / `text({ enum: [...] })`
+- `JSON` ⇒ TEXT / `text({ mode: "json" })`
 
 ## スキーマエクスポート
 

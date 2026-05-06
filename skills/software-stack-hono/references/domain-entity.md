@@ -36,14 +36,12 @@ DB レコードから Entity への変換は Repository (インフラ層) の責
 
 ## 命名規則
 
-| 種類         | 命名                  | 例                                        |
-| ------------ | --------------------- | ----------------------------------------- |
-| クラス名     | `XxxEntity`           | `CustomerEntity`                          |
-| ファイル名   | `xxx.entity.ts`       | `customer.entity.ts`                      |
-| ファクトリ   | `createXxx()`         | `createWithEmail()`, `createFromSignup()` |
-| 更新メソッド | `with*()`             | `withName()`, `withEmail()`               |
-| 状態変更     | 動詞                  | `activate()`, `delete()`, `cancel()`      |
-| 状態取得     | `is*`, `has*`, `can*` | `isDeleted`, `hasAddress`                 |
+- クラス名: `XxxEntity`（例: `CustomerEntity`）
+- ファイル名: `xxx.entity.ts`（例: `customer.entity.ts`）
+- ファクトリ: `createXxx()`（例: `createWithEmail()`、`createFromSignup()`）
+- 更新メソッド: `with*()`（例: `withName()`、`withEmail()`）
+- 状態変更: 動詞（例: `activate()`、`delete()`、`cancel()`）
+- 状態取得: `is*` / `has*` / `can*`（例: `isDeleted`、`hasAddress`）
 
 ## 実装例
 
