@@ -49,6 +49,64 @@ export default defineConfig({
 
 Install with `npm install -g @sentry/cli` when `@sentry/*` packages or `sentry.client.config.*` / `sentry.server.config.*` files exist and the user needs to query issues, upload source maps, or wire releases. Replaces the Sentry MCP.
 
+### sentry-for-ai (agent skills)
+
+Install only the skills that match the project's stack. The repo ships 30+ skills but most are for other languages or frameworks. Adding all of them pollutes the skill list and slows the agent.
+
+Always install the cross-cutting workflow skills:
+
+```
+npx -y skills add getsentry/sentry-for-ai --skill sentry-workflow,sentry-fix-issues,sentry-pr-code-review,sentry-create-alert,sentry-code-review,sentry-feature-setup,sentry-sdk-setup,sentry-sdk-upgrade
+```
+
+Then add the SDK skills that match the stack. Pick from this map:
+
+- React frontend → `sentry-react-sdk`
+- Browser-only or Vite SPA → `sentry-browser-sdk`
+- Cloudflare Workers → `sentry-cloudflare-sdk`
+- TanStack Start → `sentry-tanstack-start-sdk`
+- Next.js → `sentry-nextjs-sdk`
+- Node backend (Express, Fastify, raw Node) → `sentry-node-sdk`
+- NestJS → `sentry-nestjs-sdk`
+- React Router framework → `sentry-react-router-framework-sdk`
+- Svelte / SvelteKit → `sentry-svelte-sdk`
+- React Native → `sentry-react-native-sdk`
+- Flutter → `sentry-flutter-sdk`
+- iOS native → `sentry-cocoa-sdk`
+- Android native → `sentry-android-sdk`
+- Python → `sentry-python-sdk`
+- Ruby → `sentry-ruby-sdk`
+- Go → `sentry-go-sdk`
+- .NET → `sentry-dotnet-sdk`
+- PHP → `sentry-php-sdk`
+- Elixir → `sentry-elixir-sdk`
+- OpenTelemetry exporter → `sentry-otel-exporter-setup`
+- AI / LLM monitoring → `sentry-setup-ai-monitoring`
+
+Detection hints:
+
+- `package.json` の `dependencies` に `react` あり → React SDK
+- `package.json` の `dependencies` に `@tanstack/react-start` あり → TanStack Start SDK
+- `wrangler.json` `wrangler.toml` あり、または `@cloudflare/workers-types` → Cloudflare SDK
+- `next.config.*` あり → Next.js SDK
+- `app.module.ts` `@nestjs/*` → NestJS SDK
+- `package.json` に `expo` または `react-native` → React Native SDK
+- `pubspec.yaml` → Flutter SDK
+- `Gemfile` → Ruby SDK
+- `requirements.txt` `pyproject.toml` → Python SDK
+- `go.mod` → Go SDK
+- `*.csproj` → .NET SDK
+
+例 (React + Cloudflare Workers + TanStack Start):
+
+```
+npx -y skills add getsentry/sentry-for-ai --skill sentry-react-sdk,sentry-browser-sdk,sentry-cloudflare-sdk,sentry-tanstack-start-sdk
+```
+
+不要になったスキルは `npx -y skills remove <name> [<name>...]` で個別削除する。
+
+Pairs with `sentry-cli` for source map upload and release tagging.
+
 ### portless
 
 Install when the project plans to run two or more local dev servers (Vite, Next, Bun, Hono) at once. It hands out stable `https://<name>.localhost` URLs to dodge port collisions. On macOS: `portless trust` then `inta config portless`. Operational rules live at `.claude/rules/portless.md`.
