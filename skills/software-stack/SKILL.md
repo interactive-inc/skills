@@ -109,7 +109,7 @@ Pairs with `sentry-cli` for source map upload and release tagging.
 
 ### portless
 
-Install when the project plans to run two or more local dev servers (Vite, Next, Bun, Hono) at once. It hands out stable `https://<name>.localhost` URLs to dodge port collisions. On macOS: `portless trust` then `inta config portless`. Operational rules live at `.claude/rules/portless.md`.
+Install when the project plans to run two or more local dev servers (Vite, Next, Bun, Hono) at once. It hands out stable `https://<name>.localhost` URLs to dodge port collisions. On macOS: `portless trust` then `portless service install`. Operational rules live at `.claude/rules/portless.md`.
 
 ### agent-browser
 
