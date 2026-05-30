@@ -5,8 +5,6 @@ RyukyuInteractive/inta:
   - agents/issue-planner.md
   - rules/md.md
   - rules/ts.md
-  - skills/backlog-planning/SKILL.md
-  - skills/backlog/SKILL.md
   - skills/docs/SKILL.md
   - skills/docs/references/backlogs.md
   - skills/docs/references/decisions.md
@@ -16,9 +14,7 @@ RyukyuInteractive/inta:
   - skills/docs/references/signals.md
   - skills/docs/references/validation.md
   - skills/docs/references/writing-rules.md
-  - skills/issue-planning/SKILL.md
-  - skills/issue/SKILL.md
-  - skills/pr/SKILL.md
+  - skills/gh-issue-template/SKILL.md
   - skills/software-design/README.md
   - skills/software-design/SKILL.md
   - skills/software-design/references/architecture.md
@@ -54,3 +50,5 @@ RyukyuInteractive/inta:
   - skills/software-stack-tanstack/references/tanstack-start/basic-auth.md
   - skills/software-stack/SKILL.md
   - skills/test-lib/SKILL.md
+  - skills/triage/SKILL.md
+  - skills/triage/references/screenshot-upload.md
