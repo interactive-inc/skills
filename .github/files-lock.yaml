@@ -6,13 +6,27 @@ RyukyuInteractive/inta:
   - rules/md.md
   - rules/ts.md
   - skills/docs/SKILL.md
+  - skills/docs/references/api-schema.md
+  - skills/docs/references/architecture.md
   - skills/docs/references/backlogs.md
+  - skills/docs/references/capabilities.md
+  - skills/docs/references/components.md
   - skills/docs/references/decisions.md
-  - skills/docs/references/formats.md
+  - skills/docs/references/domain.md
+  - skills/docs/references/features.md
   - skills/docs/references/glossary.md
+  - skills/docs/references/human-claude-zone.md
   - skills/docs/references/index.md
+  - skills/docs/references/integrations.md
+  - skills/docs/references/manual.md
+  - skills/docs/references/milestones.md
+  - skills/docs/references/roles-and-permissions.md
   - skills/docs/references/signals.md
+  - skills/docs/references/sitemap.md
+  - skills/docs/references/sources.md
+  - skills/docs/references/stories.md
   - skills/docs/references/validation.md
+  - skills/docs/references/value.md
   - skills/docs/references/writing-rules.md
   - skills/gh-issue-template/SKILL.md
   - skills/software-design/README.md
