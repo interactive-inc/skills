@@ -7,6 +7,7 @@ metadata:
   author: shigurenimo
   description: ライブラリ・ユーティリティモジュールの単体テストを作成・実行・修正するスキル。--full で全探索モード、無指定で main 差分モード。サブエージェントに作業を委任する。
   dev: true
+  tags: [tools]
 ---
 
 # Test Lib

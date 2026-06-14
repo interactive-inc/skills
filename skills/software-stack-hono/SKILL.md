@@ -7,6 +7,7 @@ metadata:
   author: shigurenimo
   description: Hono フレームワークを用いた TypeScript バックエンド開発スキル。
   dev: true
+  tags: [tools]
 ---
 
 # Hono Backend

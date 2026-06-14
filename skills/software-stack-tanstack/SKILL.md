@@ -7,6 +7,7 @@ metadata:
   author: shigurenimo
   description: TanStack（Router/Query/Form/Table）と Hono API + Drizzle で型安全な React アプリを構築する。
   dev: true
+  tags: [tools]
 ---
 
 # TanStack App
