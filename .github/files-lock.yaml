@@ -104,7 +104,9 @@ RyukyuInteractive/inta#skills:
   - skills/gh-issue-template/SKILL.md
   - skills/software-design/README.md
   - skills/software-design/SKILL.md
+  - skills/software-design/references/api.md
   - skills/software-design/references/architecture.md
+  - skills/software-design/references/database.md
   - skills/software-design/references/error-handling.md
   - skills/software-design/references/fluent-api.md
   - skills/software-design/references/fsm.md
