@@ -74,6 +74,9 @@ RyukyuInteractive/inta#skills:
   - rules/md.md
   - rules/ts.md
   - skills/docs/SKILL.md
+  - skills/docs/commands/drift.md
+  - skills/docs/commands/links.md
+  - skills/docs/commands/next.md
   - skills/docs/references/api-schema.md
   - skills/docs/references/architecture.md
   - skills/docs/references/backlogs.md
