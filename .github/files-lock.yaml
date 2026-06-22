@@ -75,6 +75,7 @@ RyukyuInteractive/inta#skills:
   - rules/ts.md
   - skills/docs/SKILL.md
   - skills/docs/commands/drift.md
+  - skills/docs/commands/features-sync.md
   - skills/docs/commands/links.md
   - skills/docs/commands/next.md
   - skills/docs/references/api-schema.md
@@ -91,6 +92,7 @@ RyukyuInteractive/inta#skills:
   - skills/docs/references/integrations.md
   - skills/docs/references/manual.md
   - skills/docs/references/milestones.md
+  - skills/docs/references/notes.md
   - skills/docs/references/page-capabilities.md
   - skills/docs/references/pages.md
   - skills/docs/references/roles-and-permissions.md
