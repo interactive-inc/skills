@@ -3,6 +3,7 @@ name: software-stack-hono
 description: "?"
 user-invocable: false
 disable-model-invocation: false
+model: claude-opus-4-6[1m]
 metadata:
   author: shigurenimo
   description: Hono フレームワークを用いた TypeScript バックエンド開発スキル。

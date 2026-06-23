@@ -3,6 +3,7 @@ name: test-lib
 description: Create, run, and fix unit tests for libraries and utility modules.
 user-invocable: true
 disable-model-invocation: true
+model: claude-opus-4-6[1m]
 metadata:
   author: shigurenimo
   description: ライブラリ・ユーティリティモジュールの単体テストを作成・実行・修正するスキル。--full で全探索モード、無指定で main 差分モード。サブエージェントに作業を委任する。

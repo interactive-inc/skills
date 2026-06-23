@@ -3,6 +3,7 @@ name: software-stack-tanstack
 description: "?"
 user-invocable: false
 disable-model-invocation: false
+model: claude-opus-4-6[1m]
 metadata:
   author: shigurenimo
   description: TanStack（Router/Query/Form/Table）と Hono API + Drizzle で型安全な React アプリを構築する。
