@@ -3,10 +3,11 @@ name: software-stack-tanstack
 description: "?"
 user-invocable: false
 disable-model-invocation: false
-model: claude-opus-4-6[1m]
 metadata:
   author: shigurenimo
+  type: reference
   description: TanStack（Router/Query/Form/Table）と Hono API + Drizzle で型安全な React アプリを構築する。
+  design: TanStack と Hono と Drizzle で型安全な React アプリを組むパターン指針。フロントとデータ取得の設計判断に適用する土台となる。
   dev: true
   tags: [tools]
 ---

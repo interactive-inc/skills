@@ -3,10 +3,11 @@ name: software-stack
 description: Pick a stack skill for the project shape and decide which cross-cutting tools to install. Routes CLI/TUI/SDK to software-stack-cli, Hono backend to software-stack-hono, React SPA to software-stack-tanstack, React SSR/RSC to Next.js. Each tool entry tells you when to install, why, and how.
 user-invocable: false
 disable-model-invocation: false
-model: claude-opus-4-6[1m]
 metadata:
   author: shigurenimo
+  type: reference
   description: 技術選定と共有ツール選定をカバーするメタスキル。
+  design: プロジェクト形態からスタックを振り分け横断ツールの導入と移行を判断するメタ指針。技術選定という設計判断に直結する土台となる。
   dev: true
   tags: [stack]
 ---

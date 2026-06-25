@@ -3,10 +3,11 @@ name: software-stack-cli
 description: TypeScript CLI/TUI/SDK library design on Bun + Hono + zod + vite-plus + vitest. One package hosts a daemon, a CLI, a TUI, and an importable library off the same composition root. Every IO boundary is a port type and every IO-heavy class extracts a pure inner class so the whole thing is mockable end to end.
 user-invocable: false
 disable-model-invocation: false
-model: claude-opus-4-6[1m]
 metadata:
   author: shigurenimo
+  type: reference
   description: Bun + Hono + zod + vite-plus + vitest ベースの TypeScript CLI / TUI / SDK ライブラリ開発スキル。
+  design: ポート分離と純粋ロジック抽出で全面モック可能にする CLI/TUI/SDK のアーキテクチャ指針。コード設計の判断に適用する土台となる。
   dev: true
   tags: [stack]
 ---

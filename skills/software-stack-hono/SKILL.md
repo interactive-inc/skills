@@ -3,10 +3,11 @@ name: software-stack-hono
 description: "?"
 user-invocable: false
 disable-model-invocation: false
-model: claude-opus-4-6[1m]
 metadata:
   author: shigurenimo
+  type: reference
   description: Hono フレームワークを用いた TypeScript バックエンド開発スキル。
+  design: Interface から Domain への一方向の層構造とドメイン設計を規定する Hono バックエンドの指針。コードとドメイン設計の判断に適用する土台となる。
   dev: true
   tags: [tools]
 ---
