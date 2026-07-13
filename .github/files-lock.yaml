@@ -67,10 +67,8 @@ RyukyuInteractive/inta:
   - skills/triage/SKILL.md
   - skills/triage/references/screenshot-upload.md
 RyukyuInteractive/inta#skills:
-  - agents/backlog-planner.md
   - agents/debugger.md
   - agents/hacker.md
-  - agents/issue-planner.md
   - rules/md.md
   - rules/ts.md
   - skills/docs/SKILL.md
